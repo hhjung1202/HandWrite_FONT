@@ -1,4 +1,3 @@
-
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import os
 
@@ -30,13 +29,13 @@ def makeImage(font_name):
 
     for label_item in korean_label:
 
-        label_width=30
-        label_height=50
+        label_width=25
+        label_height=37
 
         im  =  Image.new ( "RGB", (label_width,label_height), back_ground_color )
         draw  =  ImageDraw.Draw ( im )
         unicode_font = ImageFont.truetype(os.path.join(Font_dir, font_name), font_size)
-        draw.text ( (10,10), label_item, font=unicode_font, fill=font_color )
+        draw.text ( (0,0), label_item, font=unicode_font, fill=font_color )
 
         im.save(os.path.join('./' + font_name, label_item + '.jpg'))
 
